@@ -23,6 +23,7 @@ def bet_func():
     spin2 = random.choice(["Cherry 🍒", "Orange 🍊", "Plum   🫐", "Bell   🔔", "Bar    🍫", "Seven   ❼"])
     spin3 = random.choice(["Cherry 🍒", "Orange 🍊", "Plum   🫐", "Bell   🔔", "Bar    🍫", "Seven   ❼"])
 
+    # See if the user won or lost
     if spin1 == spin2 == spin3:
         balance = balance + betamount.get()
     else:
@@ -43,6 +44,7 @@ def bet_func():
     balance_label = CTkLabel(newwindow, text=("£" + str(balance)))
     balance_label.pack(padx=5, pady=5)
 
+    # create the main loop to keep the app running
     newwindow.mainloop()
 
 # Create the text box for the user to input the amount they want to bet
