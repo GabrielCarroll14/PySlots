@@ -12,6 +12,7 @@ root = customtkinter.CTk()
 root.geometry("180x90")
 customtkinter.set_appearance_mode("system")
 customtkinter.set_default_color_theme("blue")
+root.title("PySlots")
 
 def bet_func():
     global balance
@@ -30,6 +31,7 @@ def bet_func():
     # New window settings
     newwindow = customtkinter.CTk()
     newwindow.geometry("200x70")
+    newwindow.title("Scores Window")
     customtkinter.set_appearance_mode("system")
     customtkinter.set_default_color_theme("blue")
 
