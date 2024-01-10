@@ -14,7 +14,10 @@ customtkinter.set_appearance_mode("light")
 customtkinter.set_default_color_theme("blue")
 root.title("PySlots")
 
+# Create the bet function
 def bet_func():
+    
+    # Turn the betamount and balance variables global
     global balance
     global betamount
 
@@ -60,7 +63,6 @@ def bet_func():
 
     # create the main loop to keep the app running
     newwindow.mainloop()
-    
 
 # Create the text box for the user to input the amount they want to bet
 betamount = tk.IntVar()
@@ -73,4 +75,3 @@ bet_button.pack(padx=3, pady=3)
 
 # Create the main loop to keep the app running
 root.mainloop()
-
