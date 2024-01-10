@@ -2,6 +2,7 @@ import tkinter as tk
 import customtkinter
 from customtkinter import CTkLabel, CTkEntry, CTkButton
 import random
+import sys
 
 # Create the balance variable
 balance = 100
@@ -28,6 +29,20 @@ def bet_func():
     else:
         balance = balance - betamount.get()
 
+    # Run this if the user is in dept
+    if balance < 1:
+        losewin = customtkinter.CTk()
+        losewin.geometry("250x50")
+        losewin.title("Bankrupt")
+        customtkinter.set_appearance_mode("light")
+        customtkinter.set_default_color_theme("blue")
+        loselabel = CTkLabel(losewin, text= "You are now bankrupt please try again.")
+        loselabel.pack(padx=5, pady=5)
+        losewin.mainloop()
+        
+        # exit the application
+        sys.exit()
+        
     # New window settings
     newwindow = customtkinter.CTk()
     newwindow.geometry("200x70")
@@ -45,6 +60,7 @@ def bet_func():
 
     # create the main loop to keep the app running
     newwindow.mainloop()
+    
 
 # Create the text box for the user to input the amount they want to bet
 betamount = tk.IntVar()
