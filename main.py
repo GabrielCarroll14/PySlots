@@ -10,7 +10,7 @@ balance = 100
 
 # Create the settings for the window
 root = customtkinter.CTk()
-root.geometry("180x120")
+root.geometry("180x117")
 customtkinter.set_appearance_mode("light")
 customtkinter.set_default_color_theme("blue")
 root.title("PySlots")
@@ -24,7 +24,7 @@ def save_score_window():
     
     # Window settings
     savewindow = customtkinter.CTk()
-    savewindow.geometry("200x40")
+    savewindow.geometry("200x70")
     customtkinter.set_appearance_mode("light")
     customtkinter.set_default_color_theme("blue")
     savewindow.title("Save")
