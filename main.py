@@ -1,6 +1,5 @@
 import tkinter as tk
 import customtkinter
-from customtkinter import *
 from customtkinter import CTkLabel, CTkEntry, CTkButton
 import random
 
@@ -10,7 +9,7 @@ balance = 100
 # Create the settings for the window
 root = customtkinter.CTk()
 root.geometry("180x90")
-customtkinter.set_appearance_mode("system")
+customtkinter.set_appearance_mode("light")
 customtkinter.set_default_color_theme("blue")
 root.title("PySlots")
 
@@ -33,7 +32,7 @@ def bet_func():
     newwindow = customtkinter.CTk()
     newwindow.geometry("200x70")
     newwindow.title("Scores Window")
-    customtkinter.set_appearance_mode("system")
+    customtkinter.set_appearance_mode("light")
     customtkinter.set_default_color_theme("blue")
 
     # Create the results label to display the results of the spin
