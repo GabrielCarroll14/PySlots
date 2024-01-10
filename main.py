@@ -10,10 +10,42 @@ balance = 100
 
 # Create the settings for the window
 root = customtkinter.CTk()
-root.geometry("180x90")
+root.geometry("180x120")
 customtkinter.set_appearance_mode("light")
 customtkinter.set_default_color_theme("blue")
 root.title("PySlots")
+
+# Create the save score window function
+def save_score_window():
+    
+    # Declare balance and user_name global
+    global balance
+    global user_name
+    
+    # Window settings
+    savewindow = customtkinter.CTk()
+    savewindow.geometry("200x40")
+    customtkinter.set_appearance_mode("light")
+    customtkinter.set_default_color_theme("blue")
+    savewindow.title("Save")
+    
+    # Prompt the user to enter their user name
+    user_name = tk.StringVar()
+    name_box = CTkEntry(savewindow, height=10, width=300, textvariable=user_name)
+    name_box.pack(padx=5, pady=5)
+    
+    # Get the user to save thier username
+    save_button = CTkButton(savewindow, text= "save", command=filewrite )
+    save_button.pack(padx=5, pady=5)
+    
+    # Create the mainloop
+    savewindow.mainloop()
+
+# Create the filewrite func to save data to the scores.txt file    
+def filewrite():
+    global user_name
+    with open ("scores.txt", "a") as f:
+        f.write("Username: " + user_name.get() + " Score £" + str(balance) + "\n")
 
 # Create the bet function
 def bet_func():
@@ -73,6 +105,9 @@ bet_amount_box.pack(padx=5, pady=5)
 # Create a button to initiate the bet
 bet_button = CTkButton(root, text="Bet!", command=bet_func, corner_radius=100)
 bet_button.pack(padx=3, pady=3)
+
+save_score_button = CTkButton(root, text="Save Score", corner_radius=100, command=save_score_window)
+save_score_button.pack(padx=5, pady=5)
 
 # Create the main loop to keep the app running
 root.mainloop()
