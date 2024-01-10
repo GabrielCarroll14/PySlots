@@ -5,8 +5,9 @@ from customtkinter import CTkLabel, CTkEntry, CTkButton
 import random
 import sys
 
-# Create the balance variable
+# Create the balance and username variable
 balance = 100
+user_name = ""
 
 # Create the settings for the window
 root = customtkinter.CTk()
@@ -43,9 +44,14 @@ def save_score_window():
 
 # Create the filewrite func to save data to the scores.txt file    
 def filewrite():
+    
+    # Declare balance and user_name global
     global user_name
+    global balance
+    
+    # Write the data to a file
     with open ("scores.txt", "a") as f:
-        f.write("Username: " + user_name.get() + " Score £" + str(balance) + "\n")
+        f.write("Username: " + user_name.get() + " Score: £" + str(balance) + "\n")
 
 # Create the bet function
 def bet_func():
