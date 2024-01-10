@@ -70,7 +70,7 @@ bet_amount_box = CTkEntry(root, width=150, textvariable=betamount)
 bet_amount_box.pack(padx=5, pady=5)
 
 # Create a button to initiate the bet
-bet_button = CTkButton(root, text="Bet!", command=bet_func)
+bet_button = CTkButton(root, text="Bet!", command=bet_func, corner_radius=100)
 bet_button.pack(padx=3, pady=3)
 
 # Create the main loop to keep the app running
