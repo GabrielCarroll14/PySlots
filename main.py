@@ -65,9 +65,16 @@ def bet_func():
     spin2 = random.choice(["Cherry 🍒", "Orange 🍊", "Plum   🫐", "Bell   🔔", "Bar    🍫", "Seven   ❼"])
     spin3 = random.choice(["Cherry 🍒", "Orange 🍊", "Plum   🫐", "Bell   🔔", "Bar    🍫", "Seven   ❼"])
 
-    # See if the user won or lost
+    # Return the user their bet if they won
     if spin1 == spin2 == spin3:
         balance = balance + betamount.get()
+    
+    # Return the user half their bet if they got two matching symbols
+    elif spin1 == spin2 or spin2 == spin3 or spin1 == spin3:
+        half_betamount = betamount.get() / 2
+        balance = balance + half_betamount
+    
+    # Minus the users bet from their balance if they got none correct    
     else:
         balance = balance - betamount.get()
 
