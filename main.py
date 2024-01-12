@@ -119,6 +119,7 @@ bet_amount_box.pack(padx=5, pady=5)
 bet_button = CTkButton(root, text="Bet!", command=bet_func, corner_radius=100)
 bet_button.pack(padx=3, pady=3)
 
+# Create the save score button
 save_score_button = CTkButton(root, text="Save Score", corner_radius=100, command=save_score_window)
 save_score_button.pack(padx=5, pady=5)
 
