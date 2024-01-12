@@ -11,10 +11,27 @@ user_name = ""
 
 # Create the settings for the window
 root = customtkinter.CTk()
-root.geometry("180x117")
+root.geometry("180x150")
 customtkinter.set_appearance_mode("light")
 customtkinter.set_default_color_theme("blue")
 root.title("PySlots")
+
+def read_scores():
+    
+    with open ("scores.txt", "r") as a:
+        content = a.read()
+
+    # Window settings
+    readwindow = customtkinter.CTk()
+    readwindow.geometry("200x70")
+    customtkinter.set_appearance_mode("light")
+    customtkinter.set_default_color_theme("blue")
+    readwindow.title("PySlots")
+    
+    scores = CTkLabel(readwindow, text = ("Scores: " + str(content)))
+    scores.pack(pady=5, padx=5)
+    
+    readwindow.mainloop()
 
 # Create the save score window function
 def save_score_window():
@@ -122,6 +139,10 @@ bet_button.pack(padx=3, pady=3)
 # Create the save score button
 save_score_button = CTkButton(root, text="Save Score", corner_radius=100, command=save_score_window)
 save_score_button.pack(padx=5, pady=5)
+
+# Create a read scores button
+read_button = CTkButton(root, text="View", command=read_scores, corner_radius=100)
+read_button.pack(padx=5,pady=5)
 
 # Create the main loop to keep the app running
 root.mainloop()
