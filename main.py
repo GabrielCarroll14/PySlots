@@ -28,7 +28,7 @@ def save_score_window():
     savewindow.geometry("200x70")
     customtkinter.set_appearance_mode("light")
     customtkinter.set_default_color_theme("blue")
-    savewindow.title("Save")
+    savewindow.title("PySlots")
     
     # Prompt the user to enter their user name
     user_name = tk.StringVar()
@@ -82,7 +82,7 @@ def bet_func():
     if balance < 1:
         losewin = customtkinter.CTk()
         losewin.geometry("250x50")
-        losewin.title("Bankrupt")
+        losewin.title("PySlots")
         customtkinter.set_appearance_mode("light")
         customtkinter.set_default_color_theme("blue")
         loselabel = CTkLabel(losewin, text= "You are now bankrupt please try again.")
