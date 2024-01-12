@@ -35,40 +35,38 @@ def read_scores():
 
 # Create the save score window function
 def save_score_window():
-    
     # Declare balance and user_name global
     global balance
     global user_name
-    
+
     # Window settings
     savewindow = customtkinter.CTk()
     savewindow.geometry("200x70")
     customtkinter.set_appearance_mode("light")
     customtkinter.set_default_color_theme("blue")
     savewindow.title("PySlots")
-    
+
     # Prompt the user to enter their user name
-    user_name = tk.StringVar()
-    name_box = CTkEntry(savewindow, height=10, width=300, textvariable=user_name)
+    user_name_var = tk.StringVar()  # Use a different name for StringVar
+    name_box = CTkEntry(savewindow, height=10, width=300, textvariable=user_name_var)
     name_box.pack(padx=5, pady=5)
-    
-    # Get the user to save thier username
-    save_button = CTkButton(savewindow, text= "save", command=filewrite )
+
+    # Get the user to save their username
+    save_button = CTkButton(savewindow, text="save", command=lambda: filewrite(user_name_var))
     save_button.pack(padx=5, pady=5)
-    
-    # Create the mainloop
+
+    # Create the main loop
     savewindow.mainloop()
 
-# Create the filewrite func to save data to the scores.txt file    
-def filewrite():
-    
+# Create the filewrite func to save data to the scores.txt file
+def filewrite(user_name_var):
     # Declare balance and user_name global
-    global user_name
     global balance
-    
+
     # Write the data to a file
-    with open ("scores.txt", "a") as f:
-        f.write("Username: " + user_name.get() + " Score: £" + str(balance) + "\n")
+    with open("scores.txt", "a") as f:
+        f.write("Username: " + user_name_var.get() + " Score: £" + str(balance) + "\n")
+
 
 # Create the bet function
 def bet_func():
