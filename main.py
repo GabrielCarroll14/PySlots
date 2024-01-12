@@ -1,4 +1,3 @@
-# Import stuffs
 import tkinter as tk
 import customtkinter
 from customtkinter import CTkLabel, CTkEntry, CTkButton
@@ -11,45 +10,64 @@ user_name = ""
 
 # Create the settings for the window
 root = customtkinter.CTk()
-root.geometry("180x117")
+root.geometry("180x150")
 customtkinter.set_appearance_mode("light")
 customtkinter.set_default_color_theme("blue")
 root.title("PySlots")
 
+def read_scores():
+    
+    with open ("scores.txt", "r") as a:
+        content = a.read()
+
+    # Window settings
+    readwindow = customtkinter.CTk()
+    readwindow.geometry("200x70")
+    customtkinter.set_appearance_mode("light")
+    customtkinter.set_default_color_theme("blue")
+    readwindow.title("PySlots")
+    
+    scores = CTkLabel(readwindow, text = ("Scores: " + str(content)))
+    scores.pack(pady=5, padx=5)
+    
+    readwindow.mainloop()
+
 # Create the save score window function
 def save_score_window():
+    
     # Declare balance and user_name global
     global balance
     global user_name
-
+    
     # Window settings
     savewindow = customtkinter.CTk()
     savewindow.geometry("200x70")
     customtkinter.set_appearance_mode("light")
     customtkinter.set_default_color_theme("blue")
     savewindow.title("PySlots")
-
+    
     # Prompt the user to enter their user name
-    user_name_var = tk.StringVar()  # Use a different name for StringVar
-    name_box = CTkEntry(savewindow, height=10, width=300, textvariable=user_name_var)
+    user_name = tk.StringVar()
+    name_box = CTkEntry(savewindow, height=10, width=300, textvariable=user_name)
     name_box.pack(padx=5, pady=5)
-
-    # Get the user to save their username
-    save_button = CTkButton(savewindow, text="save", command=lambda: filewrite(user_name_var))
+    
+    # Get the user to save thier username
+    save_button = CTkButton(savewindow, text= "save", command=filewrite )
     save_button.pack(padx=5, pady=5)
-
-    # Create the main loop
+    
+    # Create the mainloop
     savewindow.mainloop()
 
-# Create the filewrite func to save data to the scores.txt file
-def filewrite(user_name_var):
+# Create the filewrite func to save data to the scores.txt file    
+def filewrite():
+    
     # Declare balance and user_name global
+    global user_name
     global balance
-
+    
     # Write the data to a file
-    with open("scores.txt", "a") as f:
-        f.write("Username: " + user_name_var.get() + " Score: £" + str(balance) + "\n")
-
+    with open ("scores.txt", "a") as f:
+        f.write("Username: " + user_name.get() + " Score: £" + str(balance) + "\n")
 
 # Create the bet function
 def bet_func():
@@ -120,6 +138,10 @@ bet_button.pack(padx=3, pady=3)
 # Create the save score button
 save_score_button = CTkButton(root, text="Save Score", corner_radius=100, command=save_score_window)
 save_score_button.pack(padx=5, pady=5)
+
+# Create a read scores button
+read_button = CTkButton(root, text="View", command=read_scores, corner_radius=100)
+read_button.pack(padx=5,pady=5)
 
 # Create the main loop to keep the app running
 root.mainloop()
