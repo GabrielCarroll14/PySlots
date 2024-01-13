@@ -11,7 +11,7 @@ user_name = ""
 # Create the settings for the window
 root = customtkinter.CTk()
 root.geometry("180x150")
-customtkinter.set_appearance_mode("light")
+customtkinter.set_appearance_mode("system") # The user may ajust this to "light" or "dark" mode depending on their preferences 
 customtkinter.set_default_color_theme("blue")
 root.title("PySlots")
 
@@ -23,7 +23,7 @@ def read_scores():
     # Window settings
     readwindow = customtkinter.CTk()
     readwindow.geometry("200x70")
-    customtkinter.set_appearance_mode("light")
+    customtkinter.set_appearance_mode("system")  # The user may ajust this to "light" or "dark" mode depending on their preferences 
     customtkinter.set_default_color_theme("blue")
     readwindow.title("PySlots")
     
@@ -42,7 +42,7 @@ def save_score_window():
     # Window settings
     savewindow = customtkinter.CTk()
     savewindow.geometry("200x70")
-    customtkinter.set_appearance_mode("light")
+    customtkinter.set_appearance_mode("system") # The user may ajust this to "light" or "dark" mode depending on their preferences 
     customtkinter.set_default_color_theme("blue")
     savewindow.title("PySlots")
     
@@ -99,7 +99,7 @@ def bet_func():
         losewin = customtkinter.CTk()
         losewin.geometry("250x50")
         losewin.title("PySlots")
-        customtkinter.set_appearance_mode("light")
+        customtkinter.set_appearance_mode("system") # The user may ajust this to "light" or "dark" mode depending on their preferences 
         customtkinter.set_default_color_theme("blue")
         loselabel = CTkLabel(losewin, text= "You are now bankrupt please try again.")
         loselabel.pack(padx=5, pady=5)
@@ -112,7 +112,7 @@ def bet_func():
     newwindow = customtkinter.CTk()
     newwindow.geometry("200x70")
     newwindow.title("Scores Window")
-    customtkinter.set_appearance_mode("light")
+    customtkinter.set_appearance_mode("system") # The user may ajust this to "light" or "dark" mode depending on their preferences 
     customtkinter.set_default_color_theme("blue")
 
     # Create the results label to display the results of the spin
