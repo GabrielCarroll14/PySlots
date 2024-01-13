@@ -27,7 +27,7 @@ def read_scores():
     customtkinter.set_default_color_theme("blue")
     readwindow.title("PySlots")
     
-    scores = CTkLabel(readwindow, text = ("Scores: " + str(content)))
+    scores = CTkLabel(readwindow, text = (str(content)))
     scores.pack(pady=5, padx=5)
     
     readwindow.mainloop()
