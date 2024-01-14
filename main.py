@@ -75,56 +75,78 @@ def bet_func():
     # Turn the betamount and balance variables global
     global balance
     global betamount
-
-    # Randomise the wheels
-    spin1 = random.choice(["Cherry 🍒", "Orange 🍊", "Plum   🫐", "Bell   🔔", "Bar    🍫", "Seven   ❼"])
-    spin2 = random.choice(["Cherry 🍒", "Orange 🍊", "Plum   🫐", "Bell   🔔", "Bar    🍫", "Seven   ❼"])
-    spin3 = random.choice(["Cherry 🍒", "Orange 🍊", "Plum   🫐", "Bell   🔔", "Bar    🍫", "Seven   ❼"])
-
-    # Return the user their bet if they won
-    if spin1 == spin2 == spin3:
-        balance = balance + betamount.get()
     
-    # Return the user half their bet if they got two matching symbols
-    elif spin1 == spin2 or spin2 == spin3 or spin1 == spin3:
-        half_betamount = betamount.get() / 2
-        balance = balance + half_betamount
-    
-    # Minus the users bet from their balance if they got none correct    
-    else:
-        balance = balance - betamount.get()
-
-    # Run this if the user is in dept
-    if balance < 1:
+    # Give the user an error if they bet over £100
+    if betamount.get() > 100:
         
-        # Create the window if the user is in dept
-        losewin = customtkinter.CTk()
-        losewin.geometry("250x50")
-        losewin.title("PySlots")
+        # Window settings
+        overwin = customtkinter.CTk()
+        overwin.geometry("170x30")
         customtkinter.set_appearance_mode("system") # The user may ajust this to "light" or "dark" mode depending on their preferences 
         customtkinter.set_default_color_theme("blue")
-        loselabel = CTkLabel(losewin, text= "You are now bankrupt please try again.")
-        loselabel.pack(padx=5, pady=5)
-        losewin.mainloop()
+        overwin.title("PySlots")
         
-        # exit the application
-        sys.exit()
+        # Display the message in a label
+        erroramount = CTkLabel(overwin, text= "Please bet under £100")
+        erroramount.pack(padx=5, pady=5)
         
-    # New window settings
-    newwindow = customtkinter.CTk()
-    newwindow.geometry("200x70")
-    newwindow.title("Scores Window")
+        # Create the mainloop
+        overwin.mainloop()
+        
+    # Run the correct code if the user bets a correct amount
+    elif betamount.get() <= 100:
 
-    # Create the results label to display the results of the spin
-    results = CTkLabel(newwindow, text=(spin1 + " " + spin2 + " " + spin3))
-    results.pack(padx=5, pady=5)
+        # Randomise the wheels
+        spin1 = random.choice(["Cherry 🍒", "Orange 🍊", "Plum   🫐", "Bell   🔔", "Bar    🍫", "Seven   ❼"])
+        spin2 = random.choice(["Cherry 🍒", "Orange 🍊", "Plum   🫐", "Bell   🔔", "Bar    🍫", "Seven   ❼"])
+        spin3 = random.choice(["Cherry 🍒", "Orange 🍊", "Plum   🫐", "Bell   🔔", "Bar    🍫", "Seven   ❼"])
 
-    # Print out the user's current balance
-    balance_label = CTkLabel(newwindow, text=("£" + str(balance)))
-    balance_label.pack(padx=5, pady=5)
+        # Return the user their bet if they won
+        if spin1 == spin2 == spin3:
+            balance = balance + betamount.get()
+    
+        # Return the user half their bet if they got two matching symbols
+        elif spin1 == spin2 or spin2 == spin3 or spin1 == spin3:
+            half_betamount = betamount.get() / 2
+            balance = balance + half_betamount
+    
+        # Minus the users bet from their balance if they got none correct    
+        else:
+            balance = balance - betamount.get()
 
-    # create the main loop to keep the app running
-    newwindow.mainloop()
+        # Run this if the user is in dept
+        if balance < 1:
+        
+            # Create the window if the user is in dept
+            losewin = customtkinter.CTk()
+            losewin.geometry("250x50")
+            losewin.title("PySlots")
+            customtkinter.set_appearance_mode("system") # The user may ajust this to "light" or "dark" mode depending on their preferences 
+            customtkinter.set_default_color_theme("blue")
+            loselabel = CTkLabel(losewin, text= "You are now bankrupt please try again.")
+            loselabel.pack(padx=5, pady=5)
+            losewin.mainloop()
+        
+            # exit the application
+            sys.exit()
+        
+        # newwindow settings
+        newwindow = customtkinter.CTk()
+        newwindow.geometry("200x70")
+        newwindow.title("PySlots")
+        customtkinter.set_appearance_mode("system") # The user may ajust this to "light" or "dark" mode depending on their preferences 
+        customtkinter.set_default_color_theme("blue")
+
+        # Create the results label to display the results of the spin
+        results = CTkLabel(newwindow, text=(spin1 + " " + spin2 + " " + spin3))
+        results.pack(padx=5, pady=5)
+        
+        # Print out the user's current balance
+        balance_label = CTkLabel(newwindow, text=("£" + str(balance)))
+        balance_label.pack(padx=5, pady=5)
+
+        # create the main loop to keep the app running
+        newwindow.mainloop()
 
 # Create the text box for the user to input the amount they want to bet
 betamount = tk.IntVar()
