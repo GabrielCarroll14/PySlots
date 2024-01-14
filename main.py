@@ -72,8 +72,6 @@ def filewrite():
 # Create the bet function
 def bet_func():
     
-    global betamount
-    
     # Turn the betamount and balance variables global
     global balance
     global betamount
