@@ -17,7 +17,6 @@ root.title("PySlots")
 
 def read_scores():
     
-    # Open the file in read mode
     with open ("scores.txt", "r") as a:
         content = a.read()
 
@@ -28,11 +27,9 @@ def read_scores():
     customtkinter.set_default_color_theme("blue")
     readwindow.title("PySlots")
     
-    # Create the label to display the scores
     scores = CTkLabel(readwindow, text = (str(content)))
     scores.pack(pady=5, padx=5)
     
-    # Craete the "readwindow" mainloop
     readwindow.mainloop()
 
 # Create the save score window function
