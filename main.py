@@ -70,7 +70,7 @@ def filewrite():
     
     # Write the data to a file
     with open ("scores.txt", "a") as f:
-        f.write("Username: " + user_name.get() + " Score: £" + str(balance) + "\n")
+        f.write("Score: £" + str(balance) + "\n")
 
 # Create the bet function
 def bet_func():
@@ -99,6 +99,8 @@ def bet_func():
 
     # Run this if the user is in dept
     if balance < 1:
+        
+        # Create the window if the user is in dept
         losewin = customtkinter.CTk()
         losewin.geometry("250x50")
         losewin.title("PySlots")
