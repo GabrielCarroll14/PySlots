@@ -70,7 +70,7 @@ def filewrite():
     
     # Write the data to a file
     with open ("scores.txt", "a") as f:
-        f.write("Score: £" + str(balance) + "\n")
+        f.write("Username: " + user_name.get() + " Score: £" + str(balance) + "\n")
 
 # Create the bet function
 def bet_func():
@@ -85,6 +85,7 @@ def bet_func():
         global balance
         global betamount
 
+<<<<<<< HEAD
         # Randomise the wheels
         spin1 = random.choice(["Cherry 🍒", "Orange 🍊", "Plum   🫐", "Bell   🔔", "Bar    🍫", "Seven   ❼"])
         spin2 = random.choice(["Cherry 🍒", "Orange 🍊", "Plum   🫐", "Bell   🔔", "Bar    🍫", "Seven   ❼"])
@@ -123,6 +124,13 @@ def bet_func():
         newwindow = customtkinter.CTk()
         newwindow.geometry("200x70")
         newwindow.title("Scores Window")
+=======
+    # Run this if the user is in dept
+    if balance < 1:
+        losewin = customtkinter.CTk()
+        losewin.geometry("250x50")
+        losewin.title("PySlots")
+>>>>>>> parent of 4034564 (Update main.py)
         customtkinter.set_appearance_mode("system") # The user may ajust this to "light" or "dark" mode depending on their preferences 
         customtkinter.set_default_color_theme("blue")
 
