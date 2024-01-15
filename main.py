@@ -3,6 +3,7 @@ import customtkinter
 from customtkinter import CTkLabel, CTkEntry, CTkButton
 import random
 import sys
+import winsound
 
 # Create the balance and username variable
 balance = 100
@@ -104,15 +105,20 @@ def bet_func():
         # Return the user their bet if they won
         if spin1 == spin2 == spin3:
             balance = balance + betamount.get()
+            winsound.PlaySound("soundaffect.wav", 0)
     
         # Return the user half their bet if they got two matching symbols
         elif spin1 == spin2 or spin2 == spin3 or spin1 == spin3:
             half_betamount = betamount.get() / 2
             balance = balance + half_betamount
+            winsound.PlaySound("soundaffect.wav", 0)
+            
     
         # Minus the users bet from their balance if they got none correct    
         else:
             balance = balance - betamount.get()
+            winsound.PlaySound("soundaffect.wav", 0)
+            
 
         # Run this if the user is in dept
         if balance < 1:
@@ -125,6 +131,7 @@ def bet_func():
             customtkinter.set_default_color_theme("blue")
             loselabel = CTkLabel(losewin, text= "You are now bankrupt please try again.")
             loselabel.pack(padx=5, pady=5)
+            winsound.PlaySound("bankruptaffect.wav", 0)
             losewin.mainloop()
         
             # exit the application
