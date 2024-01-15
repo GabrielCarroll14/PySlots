@@ -14,7 +14,6 @@ root.geometry("180x150")
 customtkinter.set_appearance_mode("system") # The user may ajust this to "light" or "dark" mode depending on their preferences 
 customtkinter.set_default_color_theme("blue")
 root.title("PySlots")
-root.iconbitmap("icon.ico")
 
 def read_scores():
     
@@ -27,7 +26,6 @@ def read_scores():
     customtkinter.set_appearance_mode("system")  # The user may ajust this to "light" or "dark" mode depending on their preferences 
     customtkinter.set_default_color_theme("blue")
     readwindow.title("PySlots")
-    readwindow.iconbitmap("icon.ico")
     
     scores = CTkLabel(readwindow, text = (str(content)))
     scores.pack(pady=5, padx=5)
@@ -47,7 +45,6 @@ def save_score_window():
     customtkinter.set_appearance_mode("system") # The user may ajust this to "light" or "dark" mode depending on their preferences 
     customtkinter.set_default_color_theme("blue")
     savewindow.title("PySlots")
-    savewindow.iconbitmap("icon.ico")
     
     # Prompt the user to enter their user name
     user_name = tk.StringVar()
@@ -88,7 +85,6 @@ def bet_func():
         customtkinter.set_appearance_mode("system") # The user may ajust this to "light" or "dark" mode depending on their preferences 
         customtkinter.set_default_color_theme("blue")
         overwin.title("PySlots")
-        overwin.iconbitmap("icon.ico")
         
         # Display the message in a label
         erroramount = CTkLabel(overwin, text= "Please bet under £100")
@@ -130,7 +126,6 @@ def bet_func():
             loselabel = CTkLabel(losewin, text= "You are now bankrupt please try again.")
             loselabel.pack(padx=5, pady=5)
             losewin.mainloop()
-            losewin.iconbitmap("icon.ico")
         
             # exit the application
             sys.exit()
@@ -141,8 +136,7 @@ def bet_func():
         newwindow.title("PySlots")
         customtkinter.set_appearance_mode("system") # The user may ajust this to "light" or "dark" mode depending on their preferences 
         customtkinter.set_default_color_theme("blue")
-        newwindow.iconbitmap("icon.ico")
-
+        
         # Create the results label to display the results of the spin
         results = CTkLabel(newwindow, text=(spin1 + " " + spin2 + " " + spin3))
         results.pack(padx=5, pady=5)
