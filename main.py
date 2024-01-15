@@ -51,7 +51,7 @@ def save_score_window():
     name_box = CTkEntry(savewindow, height=10, width=300, textvariable=user_name)
     name_box.pack(padx=5, pady=5)
     
-    # Get the user to save thier username
+    # Get the user to save their username
     save_button = CTkButton(savewindow, text= "save", command=filewrite )
     save_button.pack(padx=5, pady=5)
     
