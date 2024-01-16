@@ -105,22 +105,17 @@ def bet_func():
         # Return the user their bet if they won
         if spin1 == spin2 == spin3:
             balance = balance + betamount.get()
-            winsound.PlaySound("soundaffect.wav", 0)
-    
+            
         # Return the user half their bet if they got two matching symbols
         elif spin1 == spin2 or spin2 == spin3 or spin1 == spin3:
             half_betamount = betamount.get() / 2
             balance = balance + half_betamount
-            winsound.PlaySound("soundaffect.wav", 0)
             
-    
         # Minus the users bet from their balance if they got none correct    
         else:
             balance = balance - betamount.get()
-            winsound.PlaySound("soundaffect.wav", 0)
-            
-
-        # Run this if the user is in dept
+           
+        # Run this if the user is in dept    
         if balance < 1:
         
             # Create the window if the user is in dept
@@ -129,12 +124,12 @@ def bet_func():
             losewin.title("PySlots")
             customtkinter.set_appearance_mode("system") # The user may ajust this to "light" or "dark" mode depending on their preferences 
             customtkinter.set_default_color_theme("blue")
-            loselabel = CTkLabel(losewin, text= "You are now bankrupt please try again.")
+            winsound.PlaySound("bankruptaffect.wav", 0) # Play the correct sound
+            loselabel = CTkLabel(losewin, text= "You are now bankrupt. Please try again.")
             loselabel.pack(padx=5, pady=5)
-            winsound.PlaySound("bankruptaffect.wav", 0)
             losewin.mainloop()
         
-            # exit the application
+            # Exit the app
             sys.exit()
         
         # newwindow settings
@@ -143,6 +138,9 @@ def bet_func():
         newwindow.title("PySlots")
         customtkinter.set_appearance_mode("system") # The user may ajust this to "light" or "dark" mode depending on their preferences 
         customtkinter.set_default_color_theme("blue")
+        
+        # Play the bankrupt sound
+        winsound.PlaySound("soundaffect.wav", 0)
         
         # Create the results label to display the results of the spin
         results = CTkLabel(newwindow, text=(spin1 + " " + spin2 + " " + spin3))
