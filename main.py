@@ -1,3 +1,4 @@
+# Import stuffs
 import tkinter as tk
 import customtkinter
 from customtkinter import CTkLabel, CTkEntry, CTkButton
