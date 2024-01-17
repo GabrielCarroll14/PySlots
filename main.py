@@ -95,7 +95,7 @@ def bet_func():
         # Create the mainloop
         overwin.mainloop()
         
-    # Run the correct code if the user bets a correct amount
+    # Run the code to ask randomise and output the bet results if the user bets a correct amount
     elif betamount.get() <= 100:
 
         # Randomise the wheels
