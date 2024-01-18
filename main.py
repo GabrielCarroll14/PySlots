@@ -8,7 +8,6 @@ import winsound
 
 # Create the balance and username variable
 balance = 100
-user_name = ""
 
 # Create the settings for the window
 root = customtkinter.CTk()
@@ -29,9 +28,11 @@ def read_scores():
     customtkinter.set_default_color_theme("dark-blue")
     readwindow.title("PySlots")
     
+    # Create the label to display the scores
     scores = CTkLabel(readwindow, text = (str(content)))
     scores.pack(pady=5, padx=5)
     
+    # Create the mainloop
     readwindow.mainloop()
 
 # Create the save score window function
