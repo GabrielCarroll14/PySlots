@@ -6,7 +6,7 @@ import random
 import sys
 import winsound
 
-# Create the balance and username variable
+# Create the balance variable
 balance = 100
 
 # Create the settings for the window
