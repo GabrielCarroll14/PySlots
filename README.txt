@@ -1,32 +1,41 @@
-PySlots
+# PySlots
 
-Welcome to PySlots, a simple slot machine game built using Python and the tkinter library.
-How to Play
+PySlots is a simple slot machine game implemented in Python using the Tkinter library. Users can place bets, spin the wheels, and view or save their scores.
 
-    Run the game by executing the PySlots.py script.
+## Features
 
-    Enter the amount you want to bet in the provided text box.
+- **Betting:** Users can input the amount they want to bet using the provided entry box.
 
-    Click the "Bet!" button to initiate the spin.
+- **Spinning Wheels:** The slot machine wheels are randomly spun, and the results are displayed.
 
-    The wheels will spin, and the results will be displayed in a new window.
+- **Winning Rules:**
+  - If all three symbols match, the user's balance increases by the bet amount.
+  - If two symbols match, the user receives half of their bet amount.
+  - If no symbols match, the bet amount is deducted from the user's balance.
 
-Gameplay
+- **Saving Scores:** Users can save their username and current score to a file by clicking the "Save Score" button.
 
-    Each wheel will randomly stop at one of the following symbols: Cherry 🍒, Orange 🍊, Plum 🫐, Bell 🔔, Bar 🍫, Seven ❼.
-    If all three wheels display the same symbol, you win and your balance increases by the bet amount.
-    If the symbols on the wheels do not match, you lose, and your balance decreases by the bet amount.
+- **Viewing Scores:** Users can view saved scores by clicking the "View" button, which opens a new window displaying the scores from the scores.txt file.
 
-Features
+- **Bankruptcy:** If the user's balance goes below 1, they are declared bankrupt, and the application exits.
 
-    Balance: The game starts with a default balance of £100. Your balance is displayed after each spin.
+## Customization
 
-Customization
+- **Appearance Mode:** Users can adjust the appearance mode to "light" or "dark" mode based on their preferences.
 
-Feel free to modify the code and customize the appearance or add new features to enhance the game.
-Contributing
+- **Color Theme:** The color theme for the application can be changed. The default is set to "dark-blue."
 
-Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or create a pull request.
-License
+## Sound Effects
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+- Sound effects are used to enhance the gaming experience. The `winsound` library is utilized for playing audio files.
+
+## File Structure
+
+- `pyslots.py`: The main Python script containing the PySlots game implementation.
+- `scores.txt`: A text file where user scores are saved.
+
+## Acknowledgments
+
+- PySlots uses the Tkinter library for the graphical user interface.
+
+Feel free to customize and improve upon this simple slot machine game!
