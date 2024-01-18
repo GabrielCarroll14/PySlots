@@ -14,7 +14,7 @@ user_name = ""
 root = customtkinter.CTk()
 root.geometry("180x150")
 customtkinter.set_appearance_mode("system") # The user may ajust this to "light" or "dark" mode depending on their preferences 
-customtkinter.set_default_color_theme("blue")
+customtkinter.set_default_color_theme("dark-blue")
 root.title("PySlots")
 
 def read_scores():
@@ -26,7 +26,7 @@ def read_scores():
     readwindow = customtkinter.CTk()
     readwindow.geometry("200x70")
     customtkinter.set_appearance_mode("system")  # The user may ajust this to "light" or "dark" mode depending on their preferences 
-    customtkinter.set_default_color_theme("blue")
+    customtkinter.set_default_color_theme("dark-blue")
     readwindow.title("PySlots")
     
     scores = CTkLabel(readwindow, text = (str(content)))
@@ -45,7 +45,7 @@ def save_score_window():
     savewindow = customtkinter.CTk()
     savewindow.geometry("200x70")
     customtkinter.set_appearance_mode("system") # The user may ajust this to "light" or "dark" mode depending on their preferences 
-    customtkinter.set_default_color_theme("blue")
+    customtkinter.set_default_color_theme("dark-blue")
     savewindow.title("PySlots")
     
     # Prompt the user to enter their user name
@@ -85,7 +85,7 @@ def bet_func():
         overwin = customtkinter.CTk()
         overwin.geometry("170x30")
         customtkinter.set_appearance_mode("system") # The user may ajust this to "light" or "dark" mode depending on their preferences 
-        customtkinter.set_default_color_theme("blue")
+        customtkinter.set_default_color_theme("dark-blue")
         overwin.title("PySlots")
         
         # Display the message in a label
@@ -124,7 +124,7 @@ def bet_func():
             losewin.geometry("250x50")
             losewin.title("PySlots")
             customtkinter.set_appearance_mode("system") # The user may ajust this to "light" or "dark" mode depending on their preferences 
-            customtkinter.set_default_color_theme("blue")
+            customtkinter.set_default_color_theme("dark-blue")
             winsound.PlaySound("bankruptaffect.wav", 0) # Play the correct sound
             loselabel = CTkLabel(losewin, text= "You are now bankrupt. Please try again.")
             loselabel.pack(padx=5, pady=5)
@@ -138,7 +138,7 @@ def bet_func():
         newwindow.geometry("200x70")
         newwindow.title("PySlots")
         customtkinter.set_appearance_mode("system") # The user may ajust this to "light" or "dark" mode depending on their preferences 
-        customtkinter.set_default_color_theme("blue")
+        customtkinter.set_default_color_theme("dark-blue")
         
         # Play the bankrupt sound
         winsound.PlaySound("soundaffect.wav", 0)
