@@ -50,9 +50,9 @@ def save_score_window():
     savewindow.title("PySlots")
     
     # Prompt the user to enter their user name
-    user_name = tk.StringVar()
-    name_box = CTkEntry(savewindow, height=10, width=300, textvariable=user_name)
-    name_box.pack(padx=5, pady=5)
+
+    user_name = CTkEntry(savewindow, height=10, width=300)
+    user_name.pack(padx=5, pady=5)
     
     # Get the user to save their username
     save_button = CTkButton(savewindow, text= "save", command=filewrite )
