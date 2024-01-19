@@ -134,7 +134,7 @@ def bet_func():
             # Exit the app
             sys.exit()
         
-        # newwindow settings
+        # new window settings
         newwindow = customtkinter.CTk()
         newwindow.geometry("200x70")
         newwindow.title("PySlots")
