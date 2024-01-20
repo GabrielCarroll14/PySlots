@@ -16,6 +16,7 @@ customtkinter.set_appearance_mode("system") # The user may ajust this to "light"
 customtkinter.set_default_color_theme("dark-blue")
 root.title("PySlots")
 
+# Create the read scores function
 def read_scores():
     
     with open ("scores.txt", "r") as a:
