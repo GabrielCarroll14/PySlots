@@ -82,7 +82,7 @@ def bet_func():
     
     # Give the user an error if they bet over £100
     if betamount.get() > 100:
-        
+         
         # Window settings
         overwin = customtkinter.CTk()
         overwin.geometry("170x30")
