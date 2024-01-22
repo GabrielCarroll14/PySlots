@@ -71,7 +71,7 @@ def filewrite():
     
     # Write the data to a file
     with open ("scores.txt", "a") as f:
-        f.write("Username-" + user_name.get() + ": Score-£" + str(balance) + "\n")
+        f.write("Username-" + user_name.get() + ": Score-£" + str(balance) + ":\n")
 
 # Create the bet function
 def bet_func():
